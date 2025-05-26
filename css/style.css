@@ -1,0 +1,397 @@
+.notice-text {
+  position: absolute;
+  bottom: 50px;
+  left: 60px;
+  color: black;
+}
+
+.notice-text h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notice-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.notice-section {
+  padding: 60px 20px 80px;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.notice-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.notice-header p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.notice-search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.notice-search select,
+.notice-search input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.notice-search button {
+  padding: 10px 16px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.notice-search button img {
+  width: 16px;
+  height: 16px;
+}
+
+.notice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notice-list li {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 20px 0;
+}
+
+.notice-list a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+.notice-list strong {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.notice-list p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.notice-list span {
+  color: #999;
+  font-size: 13px;
+}
+.pagination {
+  text-align: center;
+  margin-top: 40px;
+} 
+.pagination a {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 8px 12px;
+  color: #666;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+} 
+.pagination a.active,
+.pagination a:hover {
+  background: #000;
+  color: #fff;
+}
+.product-info-box {
+  position: absolute; 
+  bottom: 50px;
+  left: 100px;
+  font-size: 20px;
+}
+
+
+.product-name-box {
+  width: 303px;
+  height: 70px;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 19px; 
+}
+
+
+.action-button {
+  width: 142px;
+  height: 50px;
+  background-color: #e0e0e0;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  font-size: 20px;
+}
+h2{
+  font-size: 20px;
+  color: #4a5164;
+  font-weight: normal;
+  text-align: center;
+  padding: 80px 0 20px;
+}
+.product_listmenu{
+  display: flex;
+  justify-content: space-between;
+}
+.product_listmenu>ul{
+  display: flex;
+}
+.product_listmenu>ul>li{
+  color: #aaa;
+  font-size: 10px;
+  line-height: 20px;
+}
+.product_listmenu>ul>li>a{
+  color: #aaa;
+  line-height: 20px;
+  padding: 0 8px;
+}
+article{
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  flex-wrap: nowrap;
+  padding-top: 50px;
+}
+figure img{
+  width: 350px;
+}
+.product>h3{
+  color: #111;
+  border-bottom: 1px solid #757575;
+}
+.product>.price{
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+.product>h4{
+  color: #111;
+}
+.color>li{
+  width: 10px; height: 10px;
+  border-radius: 100%;
+  margin-right: 7px;
+}
+.black{
+  background-color: #000;
+}
+.pink{
+  background-color: pink;
+}
+.review_count{
+  font-size: 12px;
+  color: #757575;
+}
+.promotion{
+  display: flex;
+}
+.promotion>.new{
+  background-color: yellow;
+  width: 60px; height: 15px;
+  font-size: 10px;
+  text-align: center;
+  margin-right: 3px;
+}
+.promotion>.best{
+  background-color: hotpink;
+  width: 60px; height: 15px;
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
+  margin-right: 3px;
+}
+.promotion>.order{
+  background-color: blueviolet;
+  width: 60px; height: 15px;
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
+  margin-right: 3px;
+}
+.best-section {
+  text-align: center;
+  margin-top: 60px;
+}
+.best-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.best-filter {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.category-label {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.category-label a {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 24px;
+  border: 2px solid #333;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.category-label a:hover {
+  background-color: #f0f0f0;
+}
+
+.review-section {
+  margin-top: 80px;
+  text-align: center;
+}
+.review-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+}
+.review-card {
+  width: 280px;
+  text-align: center;
+}
+.review-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.review-text {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.news-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 60px auto;
+  padding: 20px 40px 40px 40px;
+  background-color: #5dc2ae;
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  height: auto;
+  overflow: visible;
+}
+
+.news-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.news-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.news-text {
+  width: 700px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  color: white;
+  text-align: left;
+  min-height: 360px;
+  margin-right: 10px;
+}
+
+.news-text h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.news-text p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.news-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.news-image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+.news-text{
+  flex: 1;
+  max-width: 700px;
+}
+.news-image {
+  flex: 1;
+  max-width: 520px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 20px;
+  height: 100%;
+}
+@media (max-width: 900px) {
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-text,
+  .news-image img {
+    max-width: 90%;
+  }
+}
