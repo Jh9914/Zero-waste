@@ -1,0 +1,93 @@
+.brand-hero {
+  position: relative;
+  background: url('./../img/brand-Story_img/Zero_waste.jpg') no-repeat center center/cover;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.brand-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.brand-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  padding: 0 20px;
+}
+
+.brand-overlay h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.brand-overlay p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* 버튼 */
+.brand-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #8EE0C4;       
+  color: #0E5B3F;            
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+.brand-btn:hover {
+  background: #0E5B3F;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .brand-hero { 
+    height: 480px; 
+  }
+  .brand-overlay h2 { 
+    font-size: 32px; 
+  }
+  .brand-overlay p { 
+    font-size: 18px; 
+  }
+  .brand-btn { 
+    font-size: 15px; 
+    padding: 10px 24px; 
+  }
+}
+@media (max-width: 720px) {
+  .brand-hero { 
+    height: 360px; 
+    padding: 0 12px; 
+  }
+  .brand-overlay h2 { 
+    font-size: 24px; 
+    margin-bottom: 12px; 
+  }
+  .brand-overlay p { 
+    font-size: 14px; 
+    line-height: 1.4; 
+    margin-bottom: 20px; 
+  }
+  .brand-btn { 
+    font-size: 14px; 
+    padding: 8px 20px; 
+    border-radius: 4px; 
+  }
+}

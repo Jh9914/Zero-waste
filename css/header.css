@@ -1,0 +1,330 @@
+.site-header{
+  position:sticky; 
+  top:0; z-index:100;
+  height:100px; 
+  background:#FCFAF3;
+  border-bottom:1px solid #bbb;
+}
+
+/* 내부 3컬럼 레이아웃: 로고 | 가운데 네비 | 오른쪽 아이콘 */
+.header-inner{
+  max-width:1160px; 
+  margin:0 auto;
+  padding:0 20px; 
+  height:100%;
+  display:grid; 
+  grid-template-columns:160px 1fr 220px; 
+  align-items:center; 
+  gap:16px;
+}
+/* 로고: 원형 테두리 버튼 느낌(피그마 스타일) */
+.logo{
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center;
+  width:90px; height:auto; 
+}
+.logo img{ 
+  width:100%; height:100%; 
+  object-fit:contain; 
+  display:block; 
+}
+
+/* 중앙 네비게이션 */
+.gnb{ 
+  display:flex; 
+  justify-content:center; 
+}
+.gnb > ul{
+  display:flex; 
+  gap:40px; 
+  list-style:none; 
+  margin:0; padding:0;
+}
+.gnb a{
+  display:block; 
+  padding:10px 4px; 
+  color:#111; 
+  text-decoration:none; 
+  font-weight:700;
+}
+.gnb a:hover{ 
+  color:#349D7C;
+}
+
+/* 오른쪽 아이콘 버튼 그룹 */
+.actions{
+  display:flex; 
+  justify-content:flex-end; 
+  align-items:center; 
+  gap:20px; 
+}
+.icon-btn{
+  width:50px; height:50px; 
+  background:transparent;
+  border: none;
+  padding:0; cursor:pointer;
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center;
+}
+
+/* 서브 네비게이션 */
+.sub-nav {
+  position: absolute;
+  top: 100%; left: 0;
+  min-width: 160px;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  z-index: 200;
+
+  max-height: 0;          /* 처음에는 숨겨짐 */
+  overflow: hidden;
+  opacity: 0;             /* 투명하게 시작 */
+  transition: max-height 0.3s ease, opacity 0.3s ease;  /* 부드럽게 애니메이션 */
+  will-change: max-height, opacity;
+}
+
+/* 메뉴 안에 들어가는 항목 스타일 */
+.sub-nav li a{
+  display:block;
+  padding:8px 16px;
+  color:#333;
+  font-size:14px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.sub-nav li a:hover{
+  background:#F5FBF8;
+  color:#349D7C;
+}
+/* 부모 li에 마우스 올렸을 때 서브메뉴 보이기 */
+.gnb > ul > li{ 
+  position:relative; 
+}
+.gnb > ul > li:hover > .sub-nav {
+  max-height: 500px;
+  opacity: 1;
+}
+.hamburger{
+  display:none; 
+  width:50px; height:50px; 
+  background:transparent; 
+  border:none; 
+  padding:0; 
+  cursor:pointer;
+  justify-self:end;
+}
+.drawer{
+  position:fixed; 
+  inset:0 0 0 auto;
+  width:min(78vw, 360px); height:100dvh;
+  background:#FCFAF3;              
+  border-left:6px solid #0E5B3F;    
+  box-shadow:-20px 0 40px rgba(0,0,0,.15);
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  z-index:1000;
+}
+/* 드로어 상단(로고 + 닫기) */
+.drawer-head{ 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  padding:16px 18px; 
+}
+.drawer-logo{ 
+  height:auto; width:60px; 
+  display:block; 
+}
+.drawer-close{
+  background:transparent; 
+  border:none; 
+  cursor:pointer; 
+  padding:8px;
+  font-size:32px; 
+  line-height:1; 
+  color:#0E5B3F;
+}
+/* 드로어 내부 링크 */
+.drawer-nav{ 
+  display:flex; 
+  flex-direction:column; 
+  gap:18px; 
+  padding:12px 24px 24px; 
+}
+.drawer-nav a{
+  font-weight:700; 
+  color: black; 
+  text-decoration:none;
+  display:block; 
+  padding:10px 0;
+}
+.drawer-nav a:hover{ 
+  color:#349D7C; 
+}
+
+/* 배경 어둡게 레이어 */
+.backdrop{
+  position:fixed; 
+  inset:0; 
+  background:rgba(0,0,0,.45);
+  opacity:0; 
+  pointer-events:none; 
+  transition:opacity .25s ease; 
+  z-index:900;
+}
+
+/* 열렸을 때 상태(바디에 클래스 부여) */
+body.drawer-open .drawer{ 
+  transform:translateX(0); 
+}
+body.drawer-open .backdrop{ 
+  opacity:1; 
+  pointer-events:auto; 
+}
+body.drawer-open{ 
+  overflow:hidden;   /* 스크롤 잠금 */
+}
+.drawer-item{
+  width:100%; 
+  text-align:left; 
+  background:transparent; 
+  border:none; 
+  cursor:pointer;
+  padding:14px 24px; 
+  font-weight:700; 
+  font-size:18px; 
+  color:#0E5B3F;
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between;
+}
+.drawer-item::after{ 
+  content:"▸"; 
+  transition:transform .2s ease; 
+}
+.drawer-item[aria-expanded="true"]::after{ 
+  transform:rotate(90deg); 
+}
+/* 하위 메뉴 영역 */
+.drawer-sub{ 
+  padding:0 24px 10px 24px; 
+}
+.drawer-sub{ 
+  display:none; 
+}
+.drawer-sub a{
+  display:block; 
+  padding:10px 0 10px 8px; 
+  color:#333; 
+  text-decoration:none; 
+  font-weight:600;
+}
+.drawer-sub a:hover{ 
+  color:#349D7C; 
+}
+
+
+/* 태블릿: 간격 살짝 압축 */
+@media (min-width:1025px){
+  .hamburger{ 
+    display:none; 
+  }    
+  .actions{ 
+    display:flex; 
+  }        
+  .gnb{ 
+    display:flex !important; 
+  }
+
+  /* 드롭다운을 부드럽게: display로 숨기지 않음! */
+  .sub-nav{
+    /* 기본 접힘 상태 */
+    max-height:0; 
+    opacity:0; 
+    overflow:hidden; 
+    pointer-events:none;
+    transform:translateY(0);  /* 틈 방지: 0 유지 (필요시 2~4px로 미세조정) */
+    transition:max-height .28s ease, opacity .22s ease, transform .22s ease;
+  }
+  /* hover/focus-within 시 펼침 */
+  .gnb > ul > li:hover > .sub-nav,
+  .gnb > ul > li:focus-within > .sub-nav{
+    max-height:420px; 
+    opacity:1; 
+    pointer-events:auto; 
+    transform:translateY(0);
+  }
+
+  /* 커서 이동 ‘틈’ 방지용 다리(원하면 사용) */
+  .gnb > ul > li::after{
+    content:""; 
+    position:absolute; 
+    left:0; right:0; top:100%; 
+    height:6px;
+  }
+}
+
+@media (max-width:1024px){
+  .header-inner{ 
+    grid-template-columns:140px 1fr auto;
+    padding:0 10px;
+  }
+  .gnb ul{ 
+    gap:24px; 
+  }
+  .actions{ 
+    display:none; 
+  }                                    
+  .hamburger {
+    display: inline-flex;  /* 모바일에서 햄버거 메뉴 표시 */
+    justify-self: end;
+    margin-left: auto;
+  }                             
+  .gnb{
+    position:absolute; 
+    left:0; right:0; top:100px;             
+    background:#fff; 
+    border-top:1px solid #eee;
+    display:none !important;                                            
+  }     
+  .gnb > ul{ 
+    flex-direction:column; gap:0; 
+    padding:8px 16px; 
+  }
+  .gnb a{ 
+    padding:12px 0; 
+  }
+  /* 서브 네비는 모바일에선 hover 대신 '펼쳐짐'으로 단순화(선택) */
+  .gnb > ul > li:hover .sub-nav{ 
+    display:block; 
+  }
+}
+/* 접근성: 키보드 포커스 */
+.hamburger:focus-visible{ 
+  outline:2px solid #349D7C; 
+  outline-offset:2px; 
+}
+
+/* 모바일: 가운데 네비 한 줄 유지 어려우면 스크롤 가능하도록 */
+@media (max-width:720px){
+  .header-inner{ 
+    grid-template-columns:120px 1fr auto; 
+    padding:0 8px; 
+  }
+  .gnb ul{ 
+    gap:20px; 
+    overflow-x:auto; 
+    white-space:nowrap; 
+    scrollbar-width:none; 
+  }
+  .gnb ul::-webkit-scrollbar{ 
+    display:none; 
+  }
+}

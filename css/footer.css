@@ -1,0 +1,215 @@
+.to-top{
+  position:fixed; 
+  right:24px; bottom:24px;
+  width:48px; height:48px; 
+  border-radius:50%;
+  background:#0E5B3F; 
+  color:#FAF7F2;
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  opacity:0; 
+  pointer-events:none; 
+  transform:translateY(8px);
+  transition:opacity .25s ease, transform .25s ease, background .2s ease;
+  z-index:900;
+}
+.to-top:hover{ 
+  background:#0B4C33; 
+}
+.to-top.is-show{ 
+  opacity:1; 
+  pointer-events:auto; 
+  transform:translateY(0); 
+}
+
+/* ===== Footer ===== */
+.esg-footer{ 
+  background:#0E5B3F; 
+  color:#FAF7F2; 
+}
+.esg-wrap{
+  max-width:1160px; 
+  margin:0 auto; 
+  padding:48px 20px 28px;
+  display:grid; gap:28px;
+  grid-template-columns: repeat(12, 1fr);
+}
+.esg-brand{ 
+  grid-column: span 5; 
+  min-width:260px; 
+}
+.esg-links{ 
+  grid-column: span 3; 
+  min-width:200px; 
+}
+.esg-help{ 
+  grid-column: span 2; 
+  min-width:180px; 
+}
+.esg-contact{ 
+  grid-column: span 2; 
+  min-width:220px; 
+}
+
+.brand-logo img{ 
+  width:90px; height:auto; 
+  display:block; 
+}
+.tagline{ 
+  margin:10px 0 6px; 
+  font-weight:800; 
+  letter-spacing:.3px; 
+}
+.brand-copy{ 
+  opacity:.95; 
+  line-height:1.7; 
+}
+
+.ft-title{ 
+  margin:0 0 10px; 
+  font-size:16px; 
+  font-weight:800; 
+}
+.esg-links ul, .esg-help ul{ 
+  list-style:none; 
+  margin:0; 
+  padding:0; 
+}
+.esg-links a, .esg-help a{
+  color:#FAF7F2; 
+  text-decoration:none; 
+  display:inline-block; 
+  padding:6px 0;
+  position:relative;
+}
+.esg-links a::after, .esg-help a::after{
+  content:""; 
+  position:absolute; 
+  left:0; bottom:0; right:100%;
+  height:2px; 
+  background:#8EE0C4; 
+  transition:right .2s ease;
+}
+.esg-links a:hover::after, .esg-help a:hover::after{ 
+  right:0; 
+}
+.esg-contact address { 
+  font-style: normal; 
+  line-height: 1.8; 
+  opacity: .95; 
+}
+.esg-contact address a { 
+  color: #FAF7F2; 
+  text-decoration: none; 
+  border-bottom: 1px dotted rgba(255,255,255,.35); 
+}
+.esg-contact address a:hover { 
+  color: #8EE0C4; 
+}
+/* 아이콘 */
+.footer-sns ul {
+  display: flex;
+  gap: 12px; 
+  padding: 0;
+  margin: 8px 0 0;
+  list-style: none;
+}
+.footer-sns li a img {
+  display: block;
+  width: 24px;  /* 아이콘 크기 */
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+.footer-sns li a:hover img {
+  transform: translateY(-2px);
+}
+.footer-sns a{
+  display:inline-flex;          /* 아이콘 크기만큼만 */
+  align-items:center;
+  justify-content:center;
+  border:0 !important;          /* .esg-contact a의 점선 보더 제거 */
+  padding:0;
+  margin:0;
+  width:auto;                   /* 강제 폭 제거 */
+  line-height:0;                /* 아이콘 주변 여백 제거 */
+}
+.footer-sns li{ 
+  line-height:0; 
+} 
+.footer-sns li a img{
+  display:block;
+  width:24px;
+  height:24px;
+}
+/* bottom bar */
+.esg-bottom{
+  border-top:1px solid rgba(255,255,255,.18);
+  display:flex; gap:14px; 
+  justify-content:space-between; 
+  align-items:center;
+  padding:14px 20px 22px; 
+  max-width:1160px; 
+  margin:0 auto;
+}
+.esg-bottom small{ opacity:.9; }
+.esg-legal{ 
+  list-style:none; 
+  display:flex; 
+  gap:18px; 
+  margin:0; 
+  padding:0; 
+}
+.esg-legal a{ 
+  color:#FAF7F2; 
+  text-decoration:none; 
+  opacity:.9; 
+}
+.esg-legal a:hover{ 
+  color:#8EE0C4; 
+}
+
+/* ===== 반응형 ===== */
+/* 태블릿 */
+@media (max-width:1024px){
+  .esg-wrap{
+    grid-template-columns: repeat(8, 1fr);
+    padding:40px 16px 22px;
+  }
+  .esg-brand{ grid-column: 1 / -1; }
+  .esg-links{ grid-column: span 4; }
+  .esg-help{ grid-column: span 2; }
+  .esg-contact{ grid-column: span 2; }
+  .to-top{ 
+    right:18px; 
+    bottom:18px; 
+  }
+}
+/* 모바일 */
+@media (max-width:720px){
+  .esg-wrap{
+    grid-template-columns: 1fr;
+    gap:22px;
+  }
+  .esg-brand, .esg-links, .esg-help, .esg-contact{ 
+    grid-column: 1 / -1; 
+  }
+  .esg-bottom{
+    flex-direction:column; 
+    gap:10px; 
+    text-align:center; 
+    padding:12px 16px 20px;
+  }
+  .esg-legal{ 
+    justify-content:center; 
+    flex-wrap:wrap; 
+  }
+  .brand-logo img{ 
+    width:120px; 
+  }
+  .to-top{ 
+    right:14px; 
+    bottom:14px; 
+  }
+}
